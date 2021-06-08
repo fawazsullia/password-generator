@@ -24,4 +24,4 @@ res.status(200).json({ data : passtoSend}).end();
 
 
 
-app.listen(process.env.PORT, ()=> console.log("up and running bitch"));
+app.listen(process.env.PORT);

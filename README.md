@@ -22,12 +22,23 @@ Available queries
 - ?caps=true ( adds uppercase alphabets to the password )
 - ?len=14 ( generates a 14 character password )
 
+
+## Response format
+
+The API returns a response in json format;
+
+`{ "data" : "sAl7*KladK" }`
+
 ## Code example
 
 ` fetch('https://passwordinator.herokuapp.com/generate') `
-On resolving the password, generates asbysaga
+
+On resolving the response, generates asbysaga
 
 `fetch('https://passwordinator.herokuapp.com/generate?num=true&char=true&caps=true&len=14')`
 On resolving generates a 14 digit password with characters, alphabets, uppercase letters and numbers
 
 I will slowly refine the doc. Watchout for new features!
+
+
+Found this useful? Let's connect on [Twitter](https://www.twitter.com/realfawazsullia)

@@ -4,8 +4,10 @@
 class Cache {
   constructor() {
     this.data = {};
-    this.limit = 1;
-    this.time = 5; // in seconds
+    this.limit = 10;
+    this.time = 10; // in seconds
+    this.ipList = []
+    this.maxCapacity = 10000
   }
 
   //returns true if cache is set
@@ -34,8 +36,18 @@ class Cache {
         count: 1,
         created: new Date().getTime(),
       };
+      if(this.ipList.length > this.maxCapacity){
+          this.clearCache()
+      } else {
+          this.ipList.push(ip)
+      }
     }
     return true
+  }
+
+  //clears old ip
+  clearCache(){
+    this.ipList.shift()
   }
 }
 

@@ -1,27 +1,39 @@
-const express = require('express');
-const app = express();
-const cors = require('cors');
-require('dotenv').config()
+const http = require("http");
+const PORT = process.env.PORT || 5000;
+const url = require("url");
+const queryValid = require("./utils/checkQueryValidity");
 
+const password = require("./generate-password.js");
 
-const password = require('./generate-password.js');
+const server = http.createServer((req, res) => {
+  const queryObj = url.parse(req.url, true).query;
 
-app.use(express.json());
+  const validQueries = {
+    num: "boolean",
+    caps: "boolean",
+    char: "boolean",
+    len: "number",
+  };
 
+  const validity = queryValid(queryObj, validQueries);
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET",
+    "Content-Type": "application/json",
+  };
+  if (validity.state === false) {
+    res.writeHead(400, headers);
+    res.end(JSON.stringify({ data: `${validity.key} is not a valid query` }));
+  } else {
+    const data = password(
+      queryObj.num,
+      queryObj.char,
+      queryObj.len,
+      queryObj.caps
+    );
+    res.writeHead(200, headers);
+    res.end(JSON.stringify({ data: data }));
+  }
+});
 
-
-app.get('/generate', cors(), (req, res)=>{
-
-let {caps, num, char, len} = req.query;
-
-let passtoSend = password(num, char, len, caps);
-res.status(200).json({ data : passtoSend}).end();
-
-})
-
-
-
-
-
-
-app.listen(process.env.PORT);
+server.listen(PORT, () => console.log("Server started on port " + PORT));

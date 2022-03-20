@@ -2,7 +2,7 @@
 // takes in 4 params
 
 
-function generatePassword(numRequired = false, charRequired =false, length = 8, capsRequired = false ){
+function generatePassword(numRequired = false, charRequired =false, length = 12, capsRequired = false ){
 
 let passwordArray = [];
 //generate number
@@ -13,8 +13,8 @@ var generateNumber = () => {
 
 //generate a special character
 var generateChar = () => {
-const charArray = [64, 38, 35, 37, 36, 42, 43];
-let index = Math.floor(7*Math.random());
+const charArray = [33, 95, 64, 38, 35, 37, 36, 42, 43];
+let index = Math.floor(charArray.length * Math.random());
 return String.fromCharCode(charArray[index]);
 };
 

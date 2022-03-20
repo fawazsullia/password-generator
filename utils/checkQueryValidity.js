@@ -1,3 +1,5 @@
+//check if the query parameters are valid
+
 function queryValid(queryObj, validQueries) {
   const keyArr = Object.keys(queryObj);
 

@@ -10,17 +10,17 @@ The api is free and can be accessed at any origin.
 
 Passwordinator lives at https://passwordinator.herokuapp.com
 
-/generate end point gives you access to a 8 character long password made of small case alphabets
+End point gives you access to a 14 character long password made of small case alphabets.
 
 ### Customization
 
-You can add queries to /generate to customize the password
+You can add queries to customize the password
 
 Available queries
 - ?num=true ( adds number to the password )
 - ?char=true (adds special character to the password )
 - ?caps=true ( adds uppercase alphabets to the password )
-- ?len=14 ( generates a 14 character password )
+- ?len=18 ( generates a 18 character password )
 
 
 ## Response format
@@ -31,12 +31,15 @@ The API returns a response in json format;
 
 ## Code example
 
-` fetch('https://passwordinator.herokuapp.com/generate') `
+` fetch('https://passwordinator.herokuapp.com')
+.then((res)=> res.json())
+.then((data) => console.log(data))
+`
 
-On resolving the response, generates asbysaga
 
-`fetch('https://passwordinator.herokuapp.com/generate?num=true&char=true&caps=true&len=14')`
-On resolving generates a 14 digit password with characters, alphabets, uppercase letters and numbers
+
+`fetch('https://passwordinator.herokuapp.com?num=true&char=true&caps=true&len=18')`
+On resolving generates a 18 digit password with characters, alphabets, uppercase letters and numbers
 
 I will slowly refine the doc. Watchout for new features!
 

@@ -4,7 +4,7 @@
 class Cache {
   constructor() {
     this.data = {};
-    this.limit = 2;
+    this.limit = 1;
     this.time = 5; // in seconds
   }
 

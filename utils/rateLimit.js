@@ -4,7 +4,7 @@
 class Cache {
   constructor() {
     this.data = {};
-    this.limit = 10;
+    this.limit = 20;
     this.time = 10; // in seconds
     this.ipList = []
     this.maxCapacity = 10000

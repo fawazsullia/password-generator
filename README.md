@@ -1,6 +1,9 @@
 # Passwordinator
 ### Generate random passwords of varying complexity
 
+Note : This was a fun project I did when learning. This is not ideal way to generate random passwords and should not be used in any serious applications.
+Also, since heroku is down, you might not be able to access the endpoint.
+
 ## About
 
 Passwordinator is an API that lets you generate random passwords of varying complexity in your app/website. 

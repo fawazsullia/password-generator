@@ -30,6 +30,11 @@ const server = http.createServer((req, res) => {
         "Access-Control-Allow-Methods": "GET",
         "Content-Type": "application/json",
       };
+    
+      if(queryObj && queryObj.len && queryObj.num < 8){ 
+        res.writeHead(400, headers);
+        res.end(JSON.stringify({ data: `len can't be less than 8` }));
+      }
       if (validity.state === false) {
         res.writeHead(400, headers);
         res.end(JSON.stringify({ data: `${validity.key} is not a valid query` }));

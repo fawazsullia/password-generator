@@ -23,7 +23,7 @@ Available queries
 - ?num=true ( adds number to the password )
 - ?char=true (adds special character to the password )
 - ?caps=true ( adds uppercase alphabets to the password )
-- ?len=18 ( generates a 18 character password )
+- ?len=18 ( generates a 18 character password . Must be greater than 7. Default is 12)
 
 
 ## Response format

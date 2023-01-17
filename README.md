@@ -11,7 +11,7 @@ The api is free and can be accessed at any origin.
 
 ## How to access
 
-Passwordinator lives at https://passwordinator.herokuapp.com
+Passwordinator lives at https://passwordinator.onrender.com
 
 End point gives you access to a 14 character long password made of small case alphabets.
 
@@ -41,7 +41,7 @@ The API returns a response in json format;
 
 
 
-`fetch('https://passwordinator.herokuapp.com?num=true&char=true&caps=true&len=18')`
+`fetch('https://passwordinator.onrender.com?num=true&char=true&caps=true&len=18')`
 On resolving generates a 18 digit password with characters, alphabets, uppercase letters and numbers
 
 I will slowly refine the doc. Watchout for new features!

@@ -34,7 +34,7 @@ The API returns a response in json format;
 
 ## Code example
 
-` fetch('https://passwordinator.herokuapp.com')
+` fetch('https://passwordinator.onrender.com')
 .then((res)=> res.json())
 .then((data) => console.log(data))
 `
